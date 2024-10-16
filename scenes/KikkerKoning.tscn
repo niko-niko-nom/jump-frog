@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cf28j674txrcd"]
+
+[ext_resource type="Script" path="res://scripts/kikker_koning.gd" id="1_f6snv"]
+[ext_resource type="Texture2D" uid="uid://dnx1h35e4hbp7" path="res://assets/Kikkerkoning Sprite_0001-Sheet.png" id="2_1mw1y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_caha2"]
+size = Vector2(32, 6)
+
+[node name="KikkerKoning" type="CharacterBody2D"]
+script = ExtResource("1_f6snv")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -27)
+texture = ExtResource("2_1mw1y")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_caha2")
