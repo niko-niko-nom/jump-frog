@@ -10,3 +10,8 @@ var direction : Vector2 :
 		
 		direction = value
 		direction_changed.emit(direction)
+
+func _apply_gravity(delta: float):
+	var gravity = get_gravity()
+	velocity.x += gravity.x * delta
+	velocity.y += gravity.y * delta

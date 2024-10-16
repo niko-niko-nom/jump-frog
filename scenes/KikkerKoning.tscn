@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cf28j674txrcd"]
+[gd_scene load_steps=7 format=3 uid="uid://cf28j674txrcd"]
 
-[ext_resource type="Script" path="res://scripts/kikker_koning.gd" id="1_f6snv"]
-[ext_resource type="Resource" uid="uid://ippjw0xgye25" path="res://resources/playerInputActions.tres" id="2_1gucn"]
+[ext_resource type="Script" path="res://scripts/kikkerKoning.gd" id="1_f6snv"]
 [ext_resource type="SpriteFrames" uid="uid://b4cqu4ku4wgb8" path="res://resources/KikkerKoning Sprite Frames.tres" id="2_pvjse"]
 [ext_resource type="Script" path="res://scripts/faceDirection.gd" id="3_ntr1o"]
+[ext_resource type="Script" path="res://scripts/playerInput.gd" id="4_8j58n"]
+[ext_resource type="Resource" uid="uid://ippjw0xgye25" path="res://resources/playerInputActions.tres" id="5_kaoai"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4vb1r"]
 radius = 3.0
@@ -11,8 +12,9 @@ height = 22.0
 
 [node name="KikkerKoning" type="CharacterBody2D"]
 script = ExtResource("1_f6snv")
-move_speed = 100.0
-actions = ExtResource("2_1gucn")
+move_speed = 150.0
+max_jump_force = 1000.0
+min_jump_force = 1.0
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,3 +31,8 @@ position = Vector2(0, -27)
 sprite_frames = ExtResource("2_pvjse")
 animation = &"Idle"
 frame_progress = 0.613416
+
+[node name="PlayerInput" type="Node" parent="." node_paths=PackedStringArray("character")]
+script = ExtResource("4_8j58n")
+character = NodePath("..")
+actions = ExtResource("5_kaoai")
