@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf28j674txrcd"]
 
 [ext_resource type="Script" path="res://scripts/kikker_koning.gd" id="1_f6snv"]
-[ext_resource type="Texture2D" uid="uid://dnx1h35e4hbp7" path="res://assets/Kikkerkoning Sprite_0001-Sheet.png" id="2_1mw1y"]
+[ext_resource type="SpriteFrames" uid="uid://b4cqu4ku4wgb8" path="res://resources/KikkerKoning Sprite Frames.tres" id="2_pvjse"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_caha2"]
 size = Vector2(32, 6)
@@ -10,10 +10,11 @@ size = Vector2(32, 6)
 script = ExtResource("1_f6snv")
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -27)
-texture = ExtResource("2_1mw1y")
-hframes = 2
+sprite_frames = ExtResource("2_pvjse")
+animation = &"Idle"
+frame_progress = 0.78891
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3)
